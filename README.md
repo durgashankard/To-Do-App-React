@@ -26,12 +26,19 @@ The application allows users to:
 ## 🚀 Features
 
 ✅ User Authentication (Login/Register)
+
 ✅ Dashboard with Task Management
+
 ✅ CRUD Operations (Create, Read, Update, Delete)
+
 ✅ Routing using React Router
+
 ✅ API Integration using Axios
+
 ✅ JSON Server (Fake Backend)
+
 ✅ Clean Folder Structure
+
 ✅ Responsive UI
 
 ---
@@ -135,6 +142,7 @@ npm run dev
 | Method | Endpoint       | Description     |
 | ------ | -------------- | --------------- |
 | GET    | /appointments  | Fetch all tasks |
+| GET    | /users         | Fetch user      |
 | POST   | /appointments  | Add new task    |
 | PUT    | /appointments/ | Update task     |
 | DELETE | /appointments/ | Delete task     |
