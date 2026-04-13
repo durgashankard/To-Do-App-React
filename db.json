@@ -1,13 +1,34 @@
 {
-    "users": [
-        {
-            "user_id": "Naresh_nit",
-            "user_name": "Naresh",
-            "password": "Naresh@123",
-            "email": "naresh@gmail.com",
-            "id": "DaW4dIv9tzo"
-        }
-    ],
-    "appointments": [],
-    "$schema": "./node_modules/json-server/schema.json"
+  "users": [
+    {
+      "user_id": "Naresh_nit",
+      "user_name": "Naresh",
+      "password": "Naresh@123",
+      "email": "naresh@gmail.com",
+      "id": "DaW4dIv9tzo"
+    },
+    {
+      "user_id": "durgesh_dev",
+      "user_name": "Durgashankar ",
+      "password": "Durga@123",
+      "email": "dd8103@outlook.com",
+      "id": "zn3cIRWIOvM"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "lfpo5BMH8cE",
+      "title": "React Class And component Life Cycle",
+      "description": "React class creating a project called To-Do App and then react Component Life Cycle ",
+      "date": "2026-04-19"
+    },
+    {
+      "title": "React Project Completed ",
+      "description": "To-Do App is Completed ",
+      "date": "2026-04-13",
+      "user_id": "durgesh_dev",
+      "id": "wAusgKF0Boo"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
