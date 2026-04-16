@@ -20,6 +20,13 @@
       "password": "Aman@123",
       "email": "Aman@outlook.com",
       "id": "3CXkNSBvZNk"
+    },
+    {
+      "user_id": "Durgesh_dev",
+      "user_name": "Durgashankar ",
+      "password": "Durga@123",
+      "email": "ddangi@outlook.com",
+      "id": "17mwEI6Ro2A"
     }
   ],
   "appointments": [
@@ -57,6 +64,13 @@
       "date": "2026-04-30",
       "user_id": "Naresh_nit",
       "id": "k5SDPtlOwZU"
+    },
+    {
+      "title": "Interview Prep.",
+      "description": "HTML, CSS, Javascript And React FAQ's Learn for Interview Purpose ",
+      "date": "2026-04-20",
+      "user_id": "Durgesh_dev",
+      "id": "mjg36UK82QM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
