@@ -1,19 +1,24 @@
 import axios from "axios";
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useCookies } from "react-cookie"
 import { Outlet, useNavigate, Link } from "react-router-dom";
 
 export function Dashboard() {
 
     const [cookies, setCookie, removeCookie] = useCookies(['userid', 'username']);
+    const [searchString, SetSearchString] = useState('')
 
     let navigate = useNavigate();
 
-    function handleSignout() {
-        removeCookie('userid');
+    const handleSignout = useCallback(() => {
         removeCookie('username');
-        navigate('/login')
+        removeCookie('userid');
+        navigate('/login');
+    }, [navigate, removeCookie])
+
+    function handleSearchString(e) {
+        SetSearchString(e.target.value);
     }
 
 
@@ -23,6 +28,8 @@ export function Dashboard() {
 
 
     }, [])
+
+
 
     return (
         <div className="container-fluid">
@@ -45,14 +52,14 @@ export function Dashboard() {
                 <div className="col-10">
                     <div className="d-flex justify-content-center">
                         <div className="input-group w-50">
-                            <input type="text" className="form-control" placeholder="Search appointments" />
+                            <input type="text" onChange={handleSearchString} className="form-control" placeholder="Search appointments" />
                             <button className="btn btn-dark bi bi-search"></button>
                         </div>
                     </div>
                     <div className="mt-4">
                         <span className="fs-5 fw-bold">Your Appointments</span> <Link to='add-appointment' className="bi btn btn-dark ms-3 bi-plus-lg"></Link>
                         <div>
-                            <Outlet />
+                            <Outlet context={searchString} />
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 import axios from "axios";
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useCookies } from "react-cookie"
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { AddAppointment } from "./add-appointment";
 
 
@@ -12,6 +12,12 @@ export function AppointmentDetails() {
     const [appointments, setAppointments] = useState([{ id: '', title: '', description: '', date: new Date(), user_id: '' }]);
 
     let navigate = useNavigate();
+
+    let searchString = useOutletContext();
+
+    let cachedAppointment = useMemo(() => {
+        return appointments;
+    }, [appointments])
 
     function LoadAppointments() {
 
@@ -27,7 +33,7 @@ export function AppointmentDetails() {
 
         LoadAppointments();
 
-    }, [appointments])
+    }, [searchString])
 
     return (
         <div className="mt-4">
@@ -42,16 +48,28 @@ export function AppointmentDetails() {
                 </thead>
                 <tbody>
                     {
-                        appointments.map(appointment =>
-                            <tr key={appointment.id}>
-                                <td>{appointment.title}</td>
-                                <td>{moment(appointment.date).format('DD dddd, MMMM yyyy')}</td>
-                                <td>
-                                    <Link to={`/dashboard/edit-appointment/${appointment.id}`} className="btn btn-warning bi bi-pen-fill"></Link>
-                                    <Link to={`/dashboard/delete-appointment/${appointment.id}`} className="btn btn-danger bi bi-trash-fill mx-2"></Link>
-                                </td>
-                            </tr>
-                        )
+                        (searchString == '') ?
+                            cachedAppointment.map(appointment =>
+                                <tr key={appointment.id}>
+                                    <td>{appointment.title}</td>
+                                    <td>{moment(appointment.date).format('DD dddd, MMMM yyyy')}</td>
+                                    <td>
+                                        <Link to={`/dashboard/edit-appointment/${appointment.id}`} className="btn btn-warning bi bi-pen-fill"></Link>
+                                        <Link to={`/dashboard/delete-appointment/${appointment.id}`} className="btn btn-danger bi bi-trash-fill mx-2"></Link>
+                                    </td>
+                                </tr>
+                            )
+                            :
+                            cachedAppointment.filter(appointment => appointment.title.toLowerCase().includes(searchString.toLowerCase())).map(appointment =>
+                                <tr key={appointment.id}>
+                                    <td>{appointment.title}</td>
+                                    <td>{moment(appointment.date).format('DD dddd, MMMM yyyy')}</td>
+                                    <td>
+                                        <Link to={`/dashboard/edit-appointment/${appointment.id}`} className="btn btn-warning bi bi-pen-fill"></Link>
+                                        <Link to={`/dashboard/delete-appointment/${appointment.id}`} className="btn btn-danger bi bi-trash-fill mx-2"></Link>
+                                    </td>
+                                </tr>
+                            )
                     }
                 </tbody>
             </table>

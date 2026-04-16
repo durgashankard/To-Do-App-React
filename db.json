@@ -8,26 +8,55 @@
       "id": "DaW4dIv9tzo"
     },
     {
-      "user_id": "durgesh_dev",
-      "user_name": "Durgashankar ",
-      "password": "Durga@123",
-      "email": "dd8103@outlook.com",
-      "id": "zn3cIRWIOvM"
+      "user_id": "Amit_nit",
+      "user_name": "Amit",
+      "password": "Amit@123",
+      "email": "amit@gmail.com",
+      "id": "WUuZhdMXeMo"
+    },
+    {
+      "user_id": "Aman_nit",
+      "user_name": "Aman",
+      "password": "Aman@123",
+      "email": "Aman@outlook.com",
+      "id": "3CXkNSBvZNk"
     }
   ],
   "appointments": [
     {
-      "id": "lfpo5BMH8cE",
-      "title": "React Class And component Life Cycle",
-      "description": "React class creating a project called To-Do App and then react Component Life Cycle ",
-      "date": "2026-04-19"
+      "id": "l7M-X7PFyfc",
+      "title": "Meeting With Client ",
+      "description": "Meeting with client for New Project ",
+      "date": "2026-04-25T00:00:00.000Z",
+      "user_id": "Naresh_nit"
     },
     {
-      "title": "React Project Completed ",
-      "description": "To-Do App is Completed ",
-      "date": "2026-04-13",
-      "user_id": "durgesh_dev",
-      "id": "wAusgKF0Boo"
+      "title": "Party Plan",
+      "description": "Today Evening",
+      "date": "2026-04-16",
+      "user_id": "Amit_nit",
+      "id": "wtElcTsXzOU"
+    },
+    {
+      "title": "React Food Delivery Project",
+      "description": "Create A New Project using React \nProject Name :- Food Delivery ",
+      "date": "2026-04-25",
+      "user_id": "Amit_nit",
+      "id": "PdVRVCF5rqM"
+    },
+    {
+      "title": "Axios And Fetch API Learn",
+      "description": "Learn for Data Conversation API Calling and Fetching Data And then Show the Data For UI",
+      "date": "2026-04-28",
+      "user_id": "Aman_nit",
+      "id": "vJmC8JGODRo"
+    },
+    {
+      "title": "Create a New React project ",
+      "description": "Unified Ticket Booking System ",
+      "date": "2026-04-30",
+      "user_id": "Naresh_nit",
+      "id": "k5SDPtlOwZU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
