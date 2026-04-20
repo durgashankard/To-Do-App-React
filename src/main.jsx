@@ -8,14 +8,19 @@ import { Register } from './To-Do-App/Todo-register.jsx';
 import { RouterProvider } from 'react-router-dom';
 import router from './routes/routes.jsx';
 import { CookiesProvider } from 'react-cookie';
+import { Provider } from 'react-redux';
+import store from './store/store.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
 
-    <CookiesProvider>
-      <RouterProvider router={router}></RouterProvider>
 
+    <CookiesProvider>
+      <Provider store={store}>
+        <RouterProvider router={router}></RouterProvider>
+
+      </Provider>
     </CookiesProvider>
 
   </StrictMode>,

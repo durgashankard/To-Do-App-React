@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import { Login } from "./Todo-login";
 import { Register } from "./Todo-register";
+import store from "../store/store";
 
 
 export function Home() {
+
+    useEffect(() => { }, [store])
+
     return (
         <div className="row mt-5">
             <div className='col mt-3'>
